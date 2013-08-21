@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="lines_20">20</integer>
+    <integer name="lines_2">2</integer>
+    <item format="integer" name="default_port" type="integer">3142</item>
+</resources>
