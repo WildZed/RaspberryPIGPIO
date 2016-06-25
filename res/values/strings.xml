@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">RaspberryPI Button</string>
+    <string name="app_name">RaspberryPI Comm Tool</string>
     <string name="action_settings">Settings</string>
     <string name="ip_desc">IP address of a Raspberry PI</string>
     <string name="ip_default">192.168.1.60</string>

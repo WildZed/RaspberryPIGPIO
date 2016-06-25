@@ -1,5 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:windowSoftInputMode="stateHidden"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -14,14 +18,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/connect"
+        android:layout_below="@+id/send"
         android:ems="10"
         android:enabled="true"
+        android:gravity="top|start"
         android:inputType="textMultiLine"
         android:lines="4"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="insideOverlay"
-        android:scrollbars="horizontal|vertical" />
+        android:scrollbars="horizontal|vertical"
+        android:textAlignment="textStart" >
+
+    </EditText>
 
     <EditText
         android:id="@+id/log_view"
@@ -30,19 +38,24 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/send"
+        android:layout_below="@+id/text_to_send"
         android:clickable="false"
         android:ems="10"
         android:enabled="true"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:freezesText="true"
+        android:gravity="top|start"
         android:inputType="textMultiLine"
         android:longClickable="false"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="horizontal|vertical"
-        android:selectAllOnFocus="false" />
+        android:selectAllOnFocus="false" >
+
+        <requestFocus />
+
+    </EditText>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -72,8 +85,6 @@
             android:inputType="numberDecimal"
             android:selectAllOnFocus="false"
             android:text="@string/ip_default" >
-
-            <requestFocus />
         </EditText>
 
         <TextView
@@ -100,8 +111,8 @@
         android:id="@+id/connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_to_send"
         android:layout_below="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
         android:onClick="connectToRaspberry"
         android:text="@string/connect_btn" />
 
@@ -109,12 +120,13 @@
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_to_send"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBaseline="@+id/connect"
+        android:layout_alignBottom="@+id/connect"
+        android:layout_alignRight="@+id/text_to_send"
         android:enabled="false"
         android:minHeight="48dip"
-        android:minWidth="64dip"
-        android:text="@string/send_btn"
-        android:textSize="@dimen/big_button" />
+        android:paddingLeft="@dimen/big_button"
+        android:paddingRight="@dimen/big_button"
+        android:text="@string/send_btn" />
 
 </RelativeLayout>
